@@ -1,0 +1,72 @@
+#loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../images/hero-image.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  background-color: #fff;
+  padding: 30px;
+}
+
+.login-container > h3 {
+  margin-bottom: 30px;
+}
+
+.login-container > .login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.login-container > .login-form > .MuiTextField-root {
+  margin-bottom: 20px;
+}
+
+.login-container > .login-form > .login-button {
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: #5F5850;
+  background-color: #F8E186;
+  border: 1px solid#F8E186;
+  cursor: pointer;
+  outline: none;
+}
+
+.login-container > .login-form > .login-button:hover {
+  color: #5F5850;
+  background-color: transparent;
+  border: 1px solid #5F5850;
+}
+
+.login-container > .login-form > .MuiTextField-root {
+  margin-bottom: 25px;
+}
+
+.text-link-to {
+  font-size: 10px;
+  text-align: center;
+}
+
+.text-link-to > .link-to {
+  margin-left: 5px;
+}

@@ -1,0 +1,326 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
+    jumbotronHome Start
+*/
+#jumbotronHome {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../images/hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+#jumbotronHome > .color-filter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  color: #ede5da;
+  background-image: linear-gradient(#00000000, #000000bd);
+}
+
+#jumbotronHome > .color-filter > .text-container {
+  margin: auto 50px 200px;
+  min-width: fit-content;
+}
+
+#jumbotronHome > .color-filter > .text-container > .line-container {
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+#jumbotronHome > .color-filter > .text-container > .line-container > .line-1 {
+  width: 40%;
+  height: 2px;
+  background-color: #F8E186;
+}
+
+#jumbotronHome > .color-filter > .text-container > .line-container > .line-2 {
+  width: 60%;
+  height: 2px;
+  background-color: #ede5da;
+}
+
+#jumbotronHome > .color-filter > .text-container > h3 {
+  font-size: 60px;
+  color:#ede5da;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.read-more-button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 7px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: #5F5850;
+  background-color: #F8E186;
+  border: 1px solid#F8E186;
+  cursor: pointer;
+  outline: none;
+}
+
+.read-more-button:hover {
+  color: #F8E186;
+  background-color: transparent;
+}
+/*
+  jumbotronHome End
+*/
+
+/* 
+  description Start
+*/
+#description {
+  width: 100%;
+  min-height: 180px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#description > .text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+#description > .text-container > h3 {
+  font-size: 50px;
+  font-weight: 700;
+  color: #5F5850;
+}
+
+#description > .text-container > p {
+  color: #838383;
+}
+
+#description > .button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#description > .button-container > .book-button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 7px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: #5F5850;
+  background-color: #fff;
+  border: 1px solid #5F5850;
+  cursor: pointer;
+  outline: none;
+}
+
+#description > .button-container > .book-button:hover {
+  color: #fff;
+  background-color: #5F5850;
+}
+
+/* 
+  description End
+*/
+
+/* 
+  facility Start
+*/
+#facility {
+  width: 100%;
+  min-height: 500px;
+  background-color: #614C4B;
+  display: flex;
+  justify-content: center;
+}
+
+#facility > .card-container {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card-item {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  margin: 40px 20px 20px 40px;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #ede5da;
+  margin-bottom: 30px;
+}
+
+.card-image > img {
+  width: 300px;
+  height: 200px;
+}
+
+.card-description {
+  color: #ede5da;
+  margin-top: 15px;
+}
+/* 
+  facility End
+*/
+
+/* 
+  services Start
+*/
+#services {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+#services > .services-section-title {
+  font-size: 50px;
+  margin-top: 50px;
+  margin-left: 35px;
+}
+
+#services > .services-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.service-item {
+  width: 500px;
+  height: 180px;
+  display: flex;
+  flex-direction: row;
+  margin: 25px;
+  align-items: center;
+}
+
+.service-item > .MuiSvgIcon-root {
+  font-size: 100px;
+}
+
+.service-item > p {
+  margin-left: 30px;
+}
+/* 
+  services Start
+*/
+
+/* 
+  gallery Start
+*/
+#gallery {
+  width: 100%;
+  min-height: 550px;
+  display: flex;
+  flex-direction: column;
+  background-color: #F1F1F1;
+}
+
+#gallery > .gallery-section-title {
+  font-size: 50px;
+  margin-top: 50px;
+  margin-left: 35px;
+}
+
+#gallery > .gallery-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.gallery-container > .row-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 12px;
+}
+
+.gallery-container > .row-container > .column {
+  flex: 33.3%;
+  max-width: 30%;
+  padding: 0 12px;
+}
+
+.gallery-container > .row-container > .column > img {
+  margin: 15px;
+  vertical-align: middle;
+  width: 90%;
+}
+/* 
+  gallery SEnd
+*/
+
+/* 
+  contact Start
+*/
+#contact {
+  width: 100%;
+  min-height: 300px;
+}
+
+#contact > .contact-section-title {
+  font-size: 50px;
+  margin-top: 50px;
+  margin-left: 35px;
+}
+
+#contact > .contact-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: 50px;
+  justify-content: center;
+}
+
+.contact-item > .MuiSvgIcon-root {
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.contact-item > p {
+  margin-left: 7px;
+}
+/* 
+  contact End
+*/

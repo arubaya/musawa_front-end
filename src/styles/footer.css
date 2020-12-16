@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  background-color: #F8E186;
+  color: #5F5850;
+}
+
+.footer > p {
+  font-weight: 600;
+
+}
