@@ -1,14 +1,15 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+import { NavLink } from 'react-router-dom';
 
 import AccessibilityNewIcon from '@material-ui/icons/AccessibilityNew';
 import CommuteIcon from '@material-ui/icons/Commute';
 import LoyaltyIcon from '@material-ui/icons/Loyalty';
 import LockIcon from '@material-ui/icons/Lock';
 
-import CallIcon from '@material-ui/icons/Call';
-import MailIcon from '@material-ui/icons/Mail';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import StreetviewIcon from '@material-ui/icons/Streetview';
+// Import Style
+import '../../../styles/home.css';
 
 import Single from '../../../images/single-room.JPG';
 import Double from '../../../images/double-room.JPG';
@@ -21,14 +22,23 @@ import Image4 from '../../../images/image-4.JPG';
 import Image5 from '../../../images/image-5.JPG';
 import Image6 from '../../../images/image-6.JPG';
 
+import heroImage from '../../../images/hero-image.jpg';
+
 import scrollTo from '../../utilities/scrollTo';
 
 import CardItem from '../components/CardItem';
 
+const useStyles = makeStyles({
+  jumbotronHome: {
+    backgroundImage: `url(${heroImage})`,
+  },
+});
+
 function Home() {
+  const classes = useStyles();
   return (
     <main>
-      <section id="jumbotronHome">
+      <section id="jumbotron" className={classes.jumbotronHome}>
         <div className="color-filter">
           <div className="text-container">
             <div className="line-container">
@@ -57,30 +67,36 @@ function Home() {
           </p>
         </div>
         <div className="button-container">
-          <button className="book-button" type="button">Book Now</button>
+          <NavLink className="book-button" to="/booking">Book now</NavLink>
         </div>
       </section>
 
-      <section id="facility">
+      <section id="rooms">
+        <h4 className="rooms-section-title">Rooms</h4>
         <div className="card-container">
-          <CardItem
-            title="Single room"
-            imageURL={Single}
-            description="Single Type consist of 1 queen size bedroom, an air
-            conditioner, a television, a wardrobe and a desk"
-          />
-          <CardItem
-            title="Double room"
-            imageURL={Double}
-            description="Double Type consist of 2 single size bedroom, an air
-            conditioner, a television, a wardrobe and a desk"
-          />
-          <CardItem
-            title="Meeting room"
-            imageURL={Meet}
-            description="Meeting Type consist of meeting chair and desk , an air
-            conditioner, a proyector, a computer and a printer"
-          />
+          <div className="row-container">
+            <div className="column">
+              <CardItem
+                title="Single bed room"
+                imageURL={Single}
+                link="1"
+              />
+            </div>
+            <div className="column">
+              <CardItem
+                title="Double bed room"
+                imageURL={Double}
+                link="2"
+              />
+            </div>
+            <div className="column">
+              <CardItem
+                title="Meeting room"
+                imageURL={Meet}
+                link="3"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -92,20 +108,12 @@ function Home() {
 
               <div className="service-item">
                 <AccessibilityNewIcon />
-                <p>
-                  We have
-                  <b> many fasilities </b>
-                  that will make your stay more homy and comfortable
-                </p>
+                <p>Many Fasilities</p>
               </div>
 
               <div className="service-item">
                 <CommuteIcon />
-                <p>
-                  The
-                  <b> place is very strategic </b>
-                  to traditional market, zoo, mall and other famous places
-                </p>
+                <p>Strategic Place</p>
               </div>
             </div>
 
@@ -113,20 +121,12 @@ function Home() {
 
               <div className="service-item">
                 <LoyaltyIcon />
-                <p>
-                  The place is
-                  <b> very affordable </b>
-                  and not overpriced it will worth every payment that you will make
-                </p>
+                <p>Very Affordable</p>
               </div>
 
               <div className="service-item">
                 <LockIcon />
-                <p>
-                  The place is
-                  <b> well secured</b>
-                  , because we have locks and camera surrounding the house/ homestay
-                </p>
+                <p>Well Secured</p>
               </div>
             </div>
           </div>
@@ -136,7 +136,6 @@ function Home() {
       <section id="gallery">
         <h4 className="gallery-section-title">Gallery</h4>
         <div className="gallery-container">
-
           <div className="row-container">
             <div className="column">
               <img src={Image1} alt="1" />
@@ -150,35 +149,6 @@ function Home() {
               <img src={Image5} alt="1" />
               <img src={Image6} alt="1" />
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h4 className="contact-section-title">Contact</h4>
-        <div className="contact-container">
-          <div className="contact-item">
-            <CallIcon />
-            <p>Phone :</p>
-            <p>0896-1919-9564</p>
-          </div>
-
-          <div className="contact-item">
-            <MailIcon />
-            <p>Email :</p>
-            <p>fahrymuh691@gmail.com</p>
-          </div>
-
-          <div className="contact-item">
-            <InstagramIcon />
-            <p>Instagram :</p>
-            <p>@homestaymusawa</p>
-          </div>
-
-          <div className="contact-item">
-            <StreetviewIcon />
-            <p>Address :</p>
-            <p>Jl. Sawo 01 no.463 Wonocatur, Banguntapan, Bantul, Yogyakarta</p>
           </div>
         </div>
       </section>

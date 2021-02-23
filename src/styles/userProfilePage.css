@@ -1,0 +1,99 @@
+#profilePage {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.profile-section-title {
+  margin: 0 20px 20px;
+  font-size: 19px;
+  color: #373c40;
+  text-align: center;
+}
+
+.user-avatar-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.user-avatar-container > .MuiSvgIcon-root {
+  font-size: 70px;
+  color: #373c40;
+}
+
+.profile-form {
+  width: fit-content;
+  margin: 30px auto 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-item {
+  margin-bottom: 20px;
+}
+
+.profile-item > .MuiFormControl-marginNormal {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.button-profile-change.MuiButtonBase-root{
+  display: none;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.button-profile-change.MuiButtonBase-root.show{
+  display: inline-flex;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+/*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
+/* 
+    Media Responsive Start 
+*/
+
+@media screen and (min-width: 576px) {
+
+}
+
+
+/* ************************************** */
+
+
+@media screen and (min-width: 992px) {
+  .profile-section-title {
+    margin: 30px 20px 20px;
+    font-size: 25px;
+    color: #373c40;
+  }
+
+}
+
+
+/* ************************************** */
+
+
+@media screen and (min-width: 1200px) {
+
+
+}
+
+/* 
+  Media Responsive End 
+*/

@@ -1,0 +1,27 @@
+import React, { useState } from 'react';
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+  backdrop: {
+    zIndex: 1301,
+    color: '#fff',
+  },
+  progress: {
+  },
+}));
+
+function BackdropLoading() {
+  const classes = useStyles();
+
+  return (
+    <div>
+      <Backdrop className={classes.backdrop} open>
+        <CircularProgress className={classes.progress} color="primary" />
+      </Backdrop>
+    </div>
+  );
+}
+
+export default BackdropLoading;

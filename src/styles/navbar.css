@@ -3,31 +3,41 @@
 */
 #header {
   width: 100%;
-  height: 70px;
+  height: 55px;
   display: flex;
   position: fixed;
   background-color: transparent;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  z-index: 998;
-  transition: 0.5s ease-in-out;
+  z-index: 1300;
+  transition: background-color 0.25s ease-in-out;
+}
+#header.solid {
+  background-color: #fff;
+  transition: background-color 0.25s ease-in-out;
+  box-shadow: 0 0 6px rgba(128, 128, 128, 0.281);
 }
 
 #nameBrand {
   font-family: 'Quicksand', sans-serif;
   font-size: 19px;
-  margin-left: 35px;
+  font-weight: 600;
   margin-bottom: 0;
-  color: #ede5da;
+  color: #fff;
 }
 
-#header.change {
-  background-image: linear-gradient(#373c40 ,#373c40);
+#nameBrand.solid {
+  color: #373c40;
+  font-weight: 600;
+}
+
+.logo {
+  width: 130px;
 }
 
 #navbar {
   margin-left: auto;
-  display: flex;
+  display: none;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -36,63 +46,146 @@
   padding: 7px;
 }
 
-#navbar > .link.active {
-  background-color: #F8E186;
-}
-
-#navbar > .link.active > a {
-  color: #5F5850;
+#navbar > .link > a {
+  color: #fff;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
   margin: 0 15px 0;
 }
 
-#navbar > .link > a {
+#navbar > .link.solid > a {
+  color: #222D40;
   text-decoration: none;
-  color: #ede5da;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0 15px 0;
 }
 
-#navbar > .scrollTo-button {
+#navbar > .scrollTo-button-container {
+  display: flex;
+}
+
+#navbar > .scrollTo-button-container > .scrollTo-button {
   padding: 7px;
 }
 
-#navbar > .scrollTo-button > .nav-button {
+#navbar > .scrollTo-button-container > .scrollTo-button > .nav-button {
   border: none;
   outline: none;
+  font-size: 15px;
   background-color: transparent;
-  color: #ede5da;
-  font-weight: 400;
+  color: #fff;
+  font-weight: 600;
   margin: 0 15px 0;
 }
 
-.login-button {
-  margin-right: 35px;
-  margin-left: 35px;
-  font-weight: 700;
+#navbar > .scrollTo-button-container > .scrollTo-button > .nav-button.solid {
+  color: #222D40;
+  font-weight: 600;
 }
 
-.login-button > a {
+.button-profile {
+  min-height: 40px;
+  width: 70px;
+  border: 1px solid #fff;
+  display: none;
+  align-items: center;
+  border-radius: 40px;
+  background-color: #fff;
+  margin-right: 35px;
+}
+.button-profile.solid {
+  border: 1px solid #717171;
+  
+}
+
+.button-profile > .menu-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  color: #222D40;
+}
+.button-profile > .menu-icon > .MuiSvgIcon-root {
+  font-size: 20px;
+}
+
+
+.button-profile > .profile-icon {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 5px;
+  color: #222D40;
+}
+.button-profile > .profile-icon > .MuiSvgIcon-root {
+  font-size: 30px;
+}
+
+.menu-item-link {
+  display: none;
+}
+
+.menu-item-link.show {
+  display: block;
+}
+
+.menu-item-link > a {
   text-decoration: none;
-  color: #F8E186;
-}
-
-.logout-button {
-  margin-right: 35px;
-  margin-left: 35px;
+  color: #222D40;
+  font-size: 16px;
 }
 
 .logout-button > button {
   border: none;
   outline: none;
   background-color: transparent;
-  color: #F8E186;
-  font-weight: 700;
+  color: #222D40;
+  font-size: 16px;
 }
 
 /*
   Header End 
+*/
+
+/* 
+    Media Responsive Start 
+*/
+
+/* @media screen and (min-width: 576px) {
+  
+  
+} */
+
+@media screen and (min-width: 960px) {
+  #header {
+    height: 70px;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    margin-left: 35px;
+  }
+  
+  #navbar.show {
+    display: flex;
+  }
+
+  .button-profile {
+    display: flex;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  
+  #nameBrand.solid {
+    color: #373c40;
+    font-weight: 600;
+  }
+
+}
+/* 
+  Media Responsive End 
 */

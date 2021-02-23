@@ -1,0 +1,45 @@
+#adminDashboard {
+  width: 100%;
+  min-height: calc(100vh - 200px);
+  display: flex;
+}
+
+.dashboard-container {
+  margin: 90px 30px 30px;
+  width: 100%;
+}
+
+.dashboard-section-title {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  color: #222D40;
+}
+
+.order-ontainer {
+  width: 100%;
+}
+
+.order-status-container {
+  display: flex;
+  width: 110px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.order-status-container > .order-status-label {
+  color: #7E7E7E;
+}
+
+.order-status-container > .order-status {
+  font-weight: 500;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-container > .message-label {
+  margin-bottom: 8px;
+  color: #7E7E7E;
+}

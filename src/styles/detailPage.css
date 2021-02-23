@@ -1,0 +1,350 @@
+#detailPage {
+  width: 100%;
+  min-height: 100vh;
+}
+
+#detailGallery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-gallery {
+  width: 100%;
+  padding-top: 55px;
+}
+
+.image-gallery {
+  width: 100%;
+}
+
+.grid-gallery {
+  display: none;
+}
+
+.detail-title {
+  font-size: 20px;
+  margin: 20px;
+  color: #373c40;
+}
+
+#dualLayout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 350px;
+}
+#dualLayout > .right-side {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#dualLayout > .left-side {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.availability-check-container {
+  max-width: 300px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 7px rgba(8, 0, 0, 0.281);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.availability-check-container > .price-tag {
+  margin: 20px 20px 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.check-availability-button {
+  bottom: 0;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 7px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background-color: #445A80;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-top: 20px;
+  border-radius: 0 0 5px 5px;
+}
+
+.availability-container {
+  display: none;
+  width: 90%;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto 0;
+}
+
+.availability-container.active {
+  display: flex;
+}
+
+.availability-info {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+.availability-info.show {
+  display: flex;
+}
+
+.availability-container > .price-detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.availability-container > .price-detail-container > .price-detail {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #717171;
+  margin: 10px 0;
+}
+
+.availability-container > .price-detail-container > .price-detail.total {
+  font-weight: 700;
+}
+
+.availability-container > .price-detail-container > .line {
+  width: 80%;
+  height: 1px;
+  margin: 10px auto 10px;
+  background-color: #7e7e7e;
+}
+
+#detailFacility {
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+#detailFacility > .detail-facility-title {
+  font-size: 27px;
+  margin-top: 30px;
+  margin-left: 20px;
+  color: #373c40;
+}
+
+#detailFacility > .detail-facility-container {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#detailFacility > .detail-facility-container > .row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#detailFacility > .detail-facility-container > .row > .col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.facility-item {
+  display: flex;
+  max-width: 300px;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin: 15px 20px 0;
+  text-decoration: line-through;
+  color: #7e7e7e;
+}
+.facility-item.show {
+  text-decoration: none;
+  color: #000;
+}
+
+.facility-item > .MuiSvgIcon-root {
+  font-size: 30px;
+}
+
+.facility-item > p {
+  margin-left: 10px;
+}
+
+.linee {
+  width: 100%;
+  height: 2px;
+  color: #373c40;
+  position: relative;
+  z-index: 100;
+}
+
+#detailRules {
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+#detailRules > .detail-rules-title {
+  font-size: 27px;
+  margin-top: 30px;
+  margin-left: 20px;
+  color: #373c40;
+}
+
+#detailRules > .detail-rules-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
+/* 
+    Media Responsive Start 
+*/
+
+@media screen and (min-width: 576px) {
+  #detailFacility > .services-container {
+    width: 90%;
+  }
+  #detailFacility > .detail-facility-section-title {
+    font-size: 30px;
+    margin-left: 30px;
+  }
+  #dualLayout {
+    flex-direction: row;
+  }
+}
+
+
+/* ************************************** */
+
+
+@media screen and (min-width: 992px) {
+  .swiper-gallery {
+    display: none;
+  }
+  .grid-gallery {
+    padding-top: 90px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+  .image-gallery {
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .grid-text-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #F1F1F1;
+  }
+
+  .grid-text-container > h2 {
+    font-size: 50px;
+  }
+
+  .grid-text-container > .line {
+    width: 50%;
+    height: 2px;
+    margin: 20px 0 20px;
+    background-color: #445A80;
+  }
+
+  .grid-text-container > p {
+    font-size: 30px;
+  }
+
+  #dualLayout {
+    flex-direction: row;
+    width: 100%;
+    min-height: 350px;
+  }
+
+  #dualLayout > .right-side {
+    width: 100%;
+  }
+  .availability-check-container {
+    margin-right: 40px;
+  }
+
+  #detailFacility > .detail-facility-container > .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .availability-check-container.edit {
+    margin-right: 0;
+  }
+
+}
+
+
+/* ************************************** */
+
+
+@media screen and (min-width: 1200px) {
+  #detailFacility > .detail-facility-section-title {
+    font-size: 40px;
+    margin-left: 50px;
+  }
+
+  #dualLayout > .right-side {
+    width: 100%;
+  }
+
+  .availability-check-container {
+    margin-right: 50px;
+  }
+
+  .availability-check-container.edit {
+    margin-right: 0;
+  }
+
+}
+
+/* 
+  Media Responsive End 
+*/

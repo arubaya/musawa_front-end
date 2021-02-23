@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
-import { TextField } from '@material-ui/core';
 import { useSetRecoilState } from 'recoil';
 import { NavLink, useHistory } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import {
+  Button,
+  Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField,
+} from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { userLogin } from '../../data/User';
 import apiClient from '../../data/api';
+import colorLogo from '../../../images/color-logo.png';
 
 function Register() {
   const [name, setName] = useState('');
@@ -17,26 +23,48 @@ function Register() {
   const [errTextEmail, setErrTextEmail] = useState('');
   const [errTextPassword, setErrTextPassword] = useState('');
   const [errTextConfirmPassword, setErrTextConfirmPassword] = useState('');
+  const [open, setOpen] = useState(false);
+  const [loginProgress, setLoginProgress] = useState(false);
 
   const setAuth = useSetRecoilState(userLogin);
   const history = useHistory();
 
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
+  const redirectToOrder = () => {
+    setOpen(false);
+    history.push('/profile');
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
+    setLoginProgress(true);
+    console.log(name, email, password);
     apiClient.get('/sanctum/csrf-cookie').then(() => {
       apiClient.post('/register', {
+        role: 'user',
         name,
         email,
         password,
         confirm_password: confirmPassword,
       }).then((res) => {
-        // console.log(res);
+        console.log(res);
         if (res.status === 200) {
           setAuth(true);
-          sessionStorage.setItem('loggedIn', true);
-          sessionStorage.setItem('id', res.data.user.id);
-          history.push('/user');
+          Cookies.set('loggedIn', true);
+          Cookies.set('id', res.data.user.id);
+          Cookies.set('role', res.data.user.role);
+          setLoginProgress(false);
+          setOpen(true);
+          // history.push('/user');
         }
+      }).catch((res) => {
+        setLoginProgress(false);
+        console.log(res);
       });
     });
   };
@@ -92,6 +120,10 @@ function Register() {
   return (
     <main>
       <section id="loginPage">
+        <div className="login-regis-logo">
+          <img src={colorLogo} alt="Musawa Logo" />
+        </div>
+        <div className="line" />
         <div className="login-container">
           <h3>Register</h3>
           <form onSubmit={submitHandler} className="login-form" noValidate autoComplete="off">
@@ -99,7 +131,6 @@ function Register() {
               autoFocus
               id="filledName"
               label="Name"
-              variant="outlined"
               color="primary"
               type="text"
               name="name"
@@ -108,7 +139,6 @@ function Register() {
             <TextField
               id="filledEmail"
               label="Email"
-              variant="outlined"
               color="primary"
               type="email"
               name="email"
@@ -119,7 +149,6 @@ function Register() {
             <TextField
               id="filledPassword"
               label="Password"
-              variant="outlined"
               color="primary"
               type="password"
               name="password"
@@ -130,7 +159,6 @@ function Register() {
             <TextField
               id="filledConfirmPassword"
               label="Confirm Password"
-              variant="outlined"
               color="primary"
               type="password"
               name="password"
@@ -138,7 +166,13 @@ function Register() {
               helperText={errTextConfirmPassword}
               onChange={(e) => checkValidate(e, 'confirm password')}
             />
-            <button className="login-button" type="submit">Register</button>
+            <button className="login-button" type="submit">
+              {loginProgress ? (
+                <CircularProgress size={20} color="light" />
+              ) : (
+                'Register'
+              )}
+            </button>
           </form>
           <p className="text-link-to">
             Already have an account?
@@ -146,6 +180,24 @@ function Register() {
               Log in
             </NavLink>
           </p>
+          <Dialog
+            open={open}
+            // onClose={handleClose}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle id="alert-dialog-title">Your account has been successfully registered</DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                Please complete your profile
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={redirectToOrder} color="primary" autoFocus>
+                Open Profile
+              </Button>
+            </DialogActions>
+          </Dialog>
         </div>
       </section>
     </main>

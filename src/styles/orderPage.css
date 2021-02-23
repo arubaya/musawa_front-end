@@ -1,0 +1,35 @@
+#orderPage{
+  width: 100%;
+  min-height: 80vh;
+}
+
+.page-title {
+  padding-top: 90px;
+  margin: 0 20px 20px;
+}
+
+.order-list-container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.no-order-container {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-container {
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.no-order-container > h3 {
+  font-size: 30px;
+}

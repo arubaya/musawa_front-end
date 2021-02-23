@@ -1,14 +1,19 @@
 import { TextField } from '@material-ui/core';
 import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Cookies from 'js-cookie';
+
 import '../../../styles/login.css';
 import apiClient from '../../data/api';
 import { userLogin, userRole } from '../../data/User';
+import colorLogo from '../../../images/color-logo.png';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loginProgress, setLoginProgress] = useState(false);
 
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
@@ -17,24 +22,30 @@ function Login() {
 
   const setAuth = useSetRecoilState(userLogin);
   const setRole = useSetRecoilState(userRole);
+
   const history = useHistory();
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setLoginProgress(true);
     apiClient.get('/sanctum/csrf-cookie').then(() => {
       apiClient.post('/login', {
         email,
         password,
       }).then((res) => {
-        // console.log(res);
+        console.log(res);
         if (res.status === 200) {
           setAuth(true);
-          sessionStorage.setItem('loggedIn', true);
-          sessionStorage.setItem('id', res.data.user.id);
-          setRole(sessionStorage.getItem('id'));
+          Cookies.set('loggedIn', true);
+          Cookies.set('id', res.data.user.id);
+          Cookies.set('role', res.data.user.role);
+          setRole(Cookies.get('id'));
           history.push('/user');
         }
       });
+    }).catch((res) => {
+      console.log(res);
+      setLoginProgress(false);
     });
   };
   const checkValidate = (e, field) => {
@@ -61,7 +72,7 @@ function Login() {
         setPassword(e.target.value);
       } else if (e.target.value.length < 8) {
         setErrorPassword(true);
-        setErrTextPassword('Your password must be at least 6 characters');
+        setErrTextPassword('Your password must be at least 8 characters');
       } else if (e.target.value.length >= 8) {
         setErrorPassword(false);
         setErrTextPassword('');
@@ -73,13 +84,16 @@ function Login() {
   return (
     <main>
       <section id="loginPage">
+        <div className="login-regis-logo">
+          <img src={colorLogo} alt="Musawa Logo" />
+        </div>
+        <div className="line" />
         <div className="login-container">
           <h3>Log in</h3>
           <form onSubmit={submitHandler} className="login-form" noValidate autoComplete="off">
             <TextField
               id="filledEmail"
               label="Email"
-              variant="outlined"
               color="primary"
               type="email"
               name="email"
@@ -91,7 +105,6 @@ function Login() {
             <TextField
               id="filledPassword"
               label="Password"
-              variant="outlined"
               color="primary"
               type="password"
               name="password"
@@ -99,10 +112,16 @@ function Login() {
               helperText={errTextPassword}
               onChange={(e) => checkValidate(e, 'password')}
             />
-            <button className="login-button" type="submit" disabled>Log in</button>
+            <button className="login-button" type="submit">
+              {loginProgress ? (
+                <CircularProgress size={20} color="light" />
+              ) : (
+                'Log in'
+              )}
+            </button>
           </form>
           <p className="text-link-to">
-            Dont have an account?
+            Don&lsquo;t have an account?
             <NavLink className="link-to" to="/register">
               Register
             </NavLink>

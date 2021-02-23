@@ -4,21 +4,23 @@ import { useRecoilValue } from 'recoil';
 import Cookies from 'js-cookie';
 import { userLogin, userRole } from '../data/User';
 
-function Authenticated(props) {
+function UserRoute(props) {
   const auth = useRecoilValue(userLogin);
   const user = useRecoilValue(userRole);
   const history = useHistory();
 
+  if (!auth) {
+    history.push('/login');
+  }
+
   if (auth) {
     if (Cookies.get('role') === 'admin') {
       history.push('/admin/dashboard');
-    } else if (Cookies.get('role') === 'user') {
-      history.push('/user');
     }
   }
-  console.log(Cookies.get('role'));
+  // console.log(Cookies.get('role'));
 
   return props.children;
 }
 
-export default Authenticated;
+export default UserRoute;

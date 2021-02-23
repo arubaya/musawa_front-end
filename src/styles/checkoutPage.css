@@ -1,0 +1,214 @@
+.edit-order-button {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #fff;
+  color: #222D40;
+  font-size: 15px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.checkout-title-container {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background-color: transparent;
+  border: none;
+  margin-left: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.dual-layout {
+  display: flex;
+  width: 100%;
+  flex-direction: column-reverse;
+}
+
+#tripDetail {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.trip-detail-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.trip-detail-container > h4 {
+  margin: 10px 20px 10px;
+  font-size: 20px;
+}
+
+.date-container {
+  display: flex;
+  margin: 10px 20px 10px;
+  flex-direction: column;
+}
+
+.guest-container {
+  display: flex;
+  margin: 10px 20px 20px;
+  flex-direction: column;
+}
+
+.title-text {
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
+.content-text {
+  color: #7e7e7e;
+}
+
+.trip-detail-container > .message-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px 10px;
+  width: 90%;
+}
+
+.trip-detail-container > .message-container > h5 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.trip-detail-container > .message-container > h6 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.trip-detail-container > .message-container > p {
+  margin-bottom: 20px;
+}
+
+.trip-detail-container > .message-container > .MuiButton-root {
+  margin-top: 20px;
+  width: fit-content;
+}
+
+#priceDetail {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#priceDetail > .price-detail-container {
+  max-width: 400px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  margin-bottom: 20px;
+}
+
+.room-type-container {
+  display: flex;
+  width: 80%;
+  margin: 20px auto 10px;
+  flex-direction: column;
+}
+
+.room-type-container > img {
+  width: 100%;
+}
+
+.room-type-container > .text-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.text-container > h6 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.price-detail-container > .price-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px 20px 10px;
+}
+
+.price-detail-container > .price-container > h5 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.price-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.price-list.total > p{
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.price-list > p {
+  font-size: 13px;
+  color: #717171;
+}
+
+.cancel-text-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px 10px;
+}
+
+
+/*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*
+*/
+
+/* 
+    Media Responsive Start 
+*/
+
+@media screen and (min-width: 576px) {
+  .dual-layout {
+    flex-direction: row;
+  }
+}
+
+
+/* ************************************** */
+
+
+@media screen and (min-width: 992px) {
+  .checkout-title-container {
+    padding-top: 90px;
+  }
+
+}
+
+
+/* ************************************** */
+
+
+@media screen and (min-width: 1200px) {
+
+
+}
+
+/* 
+  Media Responsive End 
+*/

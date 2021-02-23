@@ -1,30 +1,26 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
+import Cookies from 'js-cookie';
 import { userLogin, userRole } from '../data/User';
 
-function ProtectedRoute(props) {
+function AdminRoute(props) {
   const auth = useRecoilValue(userLogin);
   const user = useRecoilValue(userRole);
   const history = useHistory();
 
-  useEffect(() => {
-    if (!auth) {
-      history.push('/login');
-    }
-  }, []);
+  if (!auth) {
+    history.push('/login');
+  }
 
-  useEffect(() => {
-    if (auth) {
-      if (user === '1') {
-        history.push('/admin');
-      } else {
-        history.push(`/user/${user}`);
-      }
+  if (auth) {
+    if (Cookies.get('role') === 'user') {
+      history.push('/user');
     }
-  }, []);
+  }
+  // console.log(Cookies.get('role'));
 
   return props.children;
 }
 
-export default ProtectedRoute;
+export default AdminRoute;

@@ -4,11 +4,11 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-image: url('../images/hero-image.jpg');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  overflow: hidden;
+  background-color: #fff;
+}
+
+.login-regis-logo {
+  display: none;
 }
 
 .login-container {
@@ -45,17 +45,17 @@
   align-items: center;
   font-size: 17px;
   font-weight: 700;
-  color: #5F5850;
-  background-color: #F8E186;
-  border: 1px solid#F8E186;
+  color: #fff;
+  background-color:#445A80;
+  border: 1px solid#445A80;
   cursor: pointer;
   outline: none;
+  border-radius: 5px;
 }
 
 .login-container > .login-form > .login-button:hover {
-  color: #5F5850;
+  color: #445A80;
   background-color: transparent;
-  border: 1px solid #5F5850;
 }
 
 .login-container > .login-form > .MuiTextField-root {
@@ -69,4 +69,24 @@
 
 .text-link-to > .link-to {
   margin-left: 5px;
+}
+
+@media screen and (min-width: 992px) {
+  #loginPage > .line {
+    width: 1px;
+    height: 60%;
+    background-color: #5F5850;
+    margin: 0 40px 0;
+  }
+  
+  .login-regis-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+  }
+
+  .login-regis-logo > img {
+    width: 250px;
+  }
 }
